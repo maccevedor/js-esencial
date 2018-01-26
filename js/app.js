@@ -1,7 +1,12 @@
 "use strict"
 
-var edad = 29;
+//dobles o sencillas
+var bebida = "agua";
 
-var cantidad = "100";
+var comida = 'ceviche';
 
-var nuevaCantidad =  Number(cantidad);
+var instruccion = "el platillo se llama 'cevice' ";
+
+var edad = 34;
+
+var edadTxt = String(edad);
