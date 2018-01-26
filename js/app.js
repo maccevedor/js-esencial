@@ -1,5 +1,7 @@
 "use strict"
 
-const pi = 3.14;
+var edad = 29;
 
-pi = 15;
+var cantidad = "100";
+
+var nuevaCantidad =  Number(cantidad);
