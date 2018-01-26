@@ -1,3 +1,6 @@
 "use strict"
 
-var fecha = new Date();
+var simbolo1 = Symbol();
+var simbolo2 = Symbol();
+
+var ambiente = Symbol('dev');
