@@ -1,12 +1,5 @@
 "use strict"
 
-//dobles o sencillas
-var bebida = "agua";
+var activo = true;
 
-var comida = 'ceviche';
-
-var instruccion = "el platillo se llama 'cevice' ";
-
-var edad = 34;
-
-var edadTxt = String(edad);
+var estado = Boolean( 10 > 9);
