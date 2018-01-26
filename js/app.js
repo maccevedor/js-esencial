@@ -1,5 +1,3 @@
 "use strict"
 
-var activo = true;
-
-var estado = Boolean( 10 > 9);
+var fecha = new Date();
