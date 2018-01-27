@@ -1,15 +1,17 @@
 "use strict"
  
-//Function Anonima
+// callbaks
 
-// (
-//     function(){
-//         var mensaje = "Hola de nuevo";
-//         console.log(mensaje);
-//     }    
-// )()
+function calcular(datoA,datoB,sumarCB,restarCB){
+    var sumar = datoA + datoB;
+    var restar = datoA - datoB;
 
-var saludar = function(nombre){
-        var mensaje = "Hola de nuevo " + nombre;
-        return mensaje;    
+    sumarCB(sumar);
+    restarCB(restar);
 }
+
+calcular (2,3,function(resultado){
+    console.log('suma ', resultado)
+},function(resultado){
+    console.log('Restar',resultado)
+})
