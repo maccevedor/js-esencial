@@ -1,10 +1,11 @@
 "use strict"
  
-function saludar(nombre,edad){
+function saludar(nombre,edad,...masIngredientes){
     var saldo = "Hola";
-    console.log(nombre + edad)
+    var resultado;
+    console.log(masIngredientes)
     resultado = nombre + edad;
     return resultado
 }
 
-saludar('Mao',29);
+saludar('Mao',29,'Arroz','con','Pollo'); 
