@@ -1,13 +1,11 @@
 "use strict"
 
 var datoA = 10;
-var nombre = "Playa";
+var datoB = 20;
+var resultado = "sin datos";
 
-var activo = true;
-
-var persona = {
-    edad: 34,
-    deporte: "Correr"
+if( datoA > datoB ){
+    resultado = "la condicion"
 }
 
-console.log(typeof datoA);
+conloso.log(resultado);
