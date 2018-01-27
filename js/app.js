@@ -1,21 +1,27 @@
 "use strict"
-//this
+//document load
+//Timers
 
-const boton = document.querySelector('.boton');
 
-boton.addEventListener('click',function(){
-    console.log('pulsado');
-}) 
+window.addEventListener('load',function(){
+    
+});
 
-boton.addEventListener('mouseover',function(){
-    console.log('sobre');
-}) 
+// var temporizador = setInterval(function (){
+//     setColor();
+// }, 2000);
 
-boton.addEventListener('mouseout',function(){
-    console.log('afuera');
-}) 
+setTimeout(function(){
+    setColor();
+},3000)
 
-// boton.addEventListener('click',()=>{
-//     console.log(this);
-//     this.location = 'google.com';
-// })
+
+
+function setColor(){
+    var pagina = document.body
+    pagina.style.backgroundColor = pagina.style.backgroundColor == "red" ? "green" : "red"
+}
+
+function stopChangeColor(){
+    clearInterval(temporizador);
+}
