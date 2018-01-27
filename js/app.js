@@ -1,7 +1,13 @@
 "use strict"
 
 var datoA = 10;
-var datoB = 20;
+var nombre = "Playa";
 
-var resultado = datoA > datoB ? "es mayor" : "es menor";
+var activo = true;
 
+var persona = {
+    edad: 34,
+    deporte: "Correr"
+}
+
+console.log(typeof datoA);
