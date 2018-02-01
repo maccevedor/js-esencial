@@ -5,11 +5,11 @@ var mensaje = "Hola forest, Hola";
 
 var resultado;
 
+//Incase sensite y g retorna los 2 objetos
+resultado = mensaje.match(/Hola/gi);
 
-//resultado = mensaje.indexOf("Hola");
-resultado = mensaje.lastIndexOf("Hola");
+mensaje.startsWith("ja")
 
-//incase sensative
-resultado  = mensaje.search(/ja/i)
 
 console.log(resultado);
+
