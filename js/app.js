@@ -1,20 +1,10 @@
 "use strict"
 
-// destructuracion de arreglos
+// find
 
 var platillos = ['1','2','3']
 
+var pEligido = platillos.find(platillo => platillo == "3");
 
 
-// var platillo1 = null;
-// var platillo2 = null;
-// var platillo3 = null;
-
-//var [platillo1,platillo2,platillo3]  = platillos;
-
-
-//console.log(platillo1,platillo2);
-
-//platillos.forEach(platillo => console.log(platillo))
-
-platillos.forEach((platillo,index) => console.log(index,platillo))
+console.log(pEligido);
