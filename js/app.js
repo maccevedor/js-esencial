@@ -1,28 +1,15 @@
 "use strict"
 
-//array
+// destructuracion de arreglos
 
-var platillos = ["ceviche","tacos","pastas"];
-var paises = ["peru","colombia"]
-
-
-//var plato = platillos[0];
-
-var menu = [platillos,paises];
-
-console.log(menu[0][0]);
+var platillos = ['1','2','3']
 
 
-//push agrega elemento
 
-//pop saca un elemento
+// var platillo1 = null;
+// var platillo2 = null;
+// var platillo3 = null;
 
-//join retorna ocmo una cadena de texto 
+var [platillo1,platillo2,platillo3]  = platillos;
 
-var platillosHTML = Array.from(document.querySelectorAll('.platillos p'));
-
-var platillos = platillosHTML.map(platillo => patillo.textContent)
-
-var platillos = Array.of("tacos","pastas")
-
-console.log(platillos)
+console.log(platillo1,platillo2);
