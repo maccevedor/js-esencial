@@ -1,15 +1,15 @@
 "use strict"
 
-var mensaje = "Hola forest, Hola";
+//comillas especiales
+
+var lenguaje = 'javascript';
 
 
-var resultado;
+var mensaje = `como  ${lenguaje}`;
 
-//Incase sensite y g retorna los 2 objetos
-resultado = mensaje.match(/Hola/gi);
+var multilinea = `
+    hola mundo,
+    como se integra
+`;
 
-mensaje.startsWith("ja")
-
-
-console.log(resultado);
-
+console.log(multilinea); 
