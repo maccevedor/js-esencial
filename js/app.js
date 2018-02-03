@@ -1,5 +1,4 @@
 "use strict"
-
 // find
 
 var platillos = ['Ceviche','Mute']
@@ -24,6 +23,10 @@ var menu = [{
 
 //var numPlatillo = platillos.findIndex(platillo => platillo == 'Mute');
 //var numPlatillo = menu.find(platillo => platillo.nombre == 'Mute');
-var numPlatillo = menu.filter(platillo => platillo.pais == 'Colombia');
+//var numPlatillo = menu.filter(platillo => platillo.pais == 'Colombia');
 
-console.log("platillo " , numPlatillo)
+var resultado;
+//resultado = menu.some(platillo => platillo.precio < 20)
+resultado = menu.every(platillo => platillo.precio < 20)
+
+console.log("menus " , resultado)
