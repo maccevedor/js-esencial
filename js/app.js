@@ -12,9 +12,18 @@ var menu = [{
     nombre: "Mute",
     precio: 10,
     pais: "Colombia"
+},{
+    nombre: "Pasta",
+    precio: 11,
+    pais: "Italy"
+},{
+    nombre: "Ajiaco",
+    precio: 15,
+    pais: "Colombia"
 }]
 
 //var numPlatillo = platillos.findIndex(platillo => platillo == 'Mute');
-var numPlatillo = menu.findIndex(platillo => platillo.nombre == 'Mute');
+//var numPlatillo = menu.find(platillo => platillo.nombre == 'Mute');
+var numPlatillo = menu.filter(platillo => platillo.pais == 'Colombia');
 
 console.log("platillo " , numPlatillo)
