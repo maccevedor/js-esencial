@@ -2,9 +2,19 @@
 
 // find
 
-var platillos = ['1','2','3']
+var platillos = ['Ceviche','Mute']
 
-var pEligido = platillos.find(platillo => platillo == "3");
+var menu = [{
+    nombre: "Ceviche",
+    precio: 20,
+    pais: "Peru"
+},{
+    nombre: "Mute",
+    precio: 10,
+    pais: "Colombia"
+}]
 
+//var numPlatillo = platillos.findIndex(platillo => platillo == 'Mute');
+var numPlatillo = menu.findIndex(platillo => platillo.nombre == 'Mute');
 
-console.log(pEligido);
+console.log("platillo " , numPlatillo)
