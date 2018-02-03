@@ -30,3 +30,7 @@ var resultado;
 resultado = menu.every(platillo => platillo.precio < 20)
 
 console.log("menus " , resultado)
+
+function mostrarDatos(post){
+    postMessage.map((post,i))
+}

@@ -37,5 +37,17 @@
         //console.log(window.location.href);
         console.log(parrafoClase);
     })
+
+    console.log('innerHeight:', window.innerHeight)
+    localStorage.setItem('contenido', 'practica');
+
+    var contenido = localStorage.getItem('contenido');
+
+    var principal = document.getElementsByClassName('principal')[0];
+    principal.innerHTML = contenido;
+    // window.history.forward()
+    // window.history.back()
+    // window.history.go(3)    
+
 </script>
 </html>
