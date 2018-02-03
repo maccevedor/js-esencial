@@ -35,7 +35,7 @@ var boton = document.getElementById('boton');
 var contenedor = document.getElementById('contenedor');
 var posts = null
 var contBanderas = document.getElementById('banderas')
-
+var mensaje = document.getElementById('mensaje');
 
 boton.addEventListener('click',function(){
     fetch('https://jsonplaceholder.typicode.com/posts')
@@ -44,6 +44,7 @@ boton.addEventListener('click',function(){
         posts = data;
         mostrarDatos(posts);
     })
+
 })
 
 function mostrarDatos(posts){
@@ -69,11 +70,16 @@ boton.addEventListener('click', function (){
     .then(countries => {
         mostrarBanderas(countries);
     })
+    .catch(error =>{
+        mensaje.classList.toggle('hide');
+        mensaje.innerHTML = error;
+        setTimeout(() => mensaje.classList.toggle('hide'),6000)
+    })
 
 })
 
 function getPosts(){
-    return     fetch('https://jsonplaceholder.typicode.com/posts')
+    return     fetch('https://jsonplaceholder.typicode.comm/posts')
 }
 
 function getCountries(){
