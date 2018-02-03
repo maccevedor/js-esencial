@@ -31,6 +31,28 @@ resultado = menu.every(platillo => platillo.precio < 20)
 
 console.log("menus " , resultado)
 
-function mostrarDatos(post){
-    postMessage.map((post,i))
+var boton = document.getElementById('boton');
+var contenedor = document.getElementById('contenedor');
+var posts = null
+
+
+boton.addEventListener('click',function(){
+    fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(data => data.json())
+    .then(data => {
+        posts = data;
+        mostrarDatos(posts);
+    })
+})
+
+function mostrarDatos(posts){
+    posts.map((post,i) => {
+        let titulo = document.createElement('h1');
+
+        titulo.innerHTML = (i +1) + " - "  + post.title
+        //contenido.innerHTML = post.body
+
+        contenedor.appendChild(titulo)
+        //contenedor.appendChild(contedio)
+    })
 }

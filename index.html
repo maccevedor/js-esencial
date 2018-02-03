@@ -8,8 +8,11 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 <body>
     <button id="boton">
-        Pulsame
+        traer datos
     </button>
+    <div id='contenedor'>
+
+    </div>
     <div class="boton">
         
     </div>
@@ -20,34 +23,34 @@
 </body>
 <script>
     var boton = document.getElementById('boton');
-    var todosLosParrafos = document.getElementsByTagName('p');
-    var parrafoClase = document.getElementsByClassName('principal')[0].textContent;
+    // var todosLosParrafos = document.getElementsByTagName('p');
+    // var parrafoClase = document.getElementsByClassName('principal')[0].textContent;
 
-    var foto = document.createElement('img');
-    foto.src = "foto1.jpg"
-    foto.width = 400;
-    document.body.appendChild(foto);
+    // var foto = document.createElement('img');
+    // foto.src = "foto1.jpg"
+    // foto.width = 400;
+    // document.body.appendChild(foto);
 
-    foto.addEventListener('click',function(){
-        //console.log(window.location.href);
-        console.log(parrafoClase);
-    })
+    // foto.addEventListener('click',function(){
+    //     //console.log(window.location.href);
+    //     console.log(parrafoClase);
+    // })
 
-    boton.addEventListener('click',function(){
-        //console.log(window.location.href);
-        console.log(parrafoClase);
-    })
+    // // boton.addEventListener('click',function(){
+    // //     //console.log(window.location.href);
+    // //     console.log(parrafoClase);
+    // // })
 
-    console.log('innerHeight:', window.innerHeight)
-    localStorage.setItem('contenido', 'practica');
+    // console.log('innerHeight:', window.innerHeight)
+    // localStorage.setItem('contenido', 'practica');
 
-    var contenido = localStorage.getItem('contenido');
+    // var contenido = localStorage.getItem('contenido');
 
-    var principal = document.getElementsByClassName('principal')[0];
-    principal.innerHTML = contenido;
-    // window.history.forward()
-    // window.history.back()
-    // window.history.go(3)    
+    // var principal = document.getElementsByClassName('principal')[0];
+    // principal.innerHTML = contenido;
+    // // window.history.forward()
+    // // window.history.back()
+    // // window.history.go(3)    
 
 </script>
 </html>
