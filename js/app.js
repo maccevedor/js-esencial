@@ -34,6 +34,7 @@ console.log("menus " , resultado)
 var boton = document.getElementById('boton');
 var contenedor = document.getElementById('contenedor');
 var posts = null
+var contBanderas = document.getElementById('banderas')
 
 
 boton.addEventListener('click',function(){
@@ -54,5 +55,38 @@ function mostrarDatos(posts){
 
         contenedor.appendChild(titulo)
         //contenedor.appendChild(contedio)
+    })
+}
+
+boton.addEventListener('click', function (){
+    getPosts()
+    .then(data => data.json())
+    .then(posts =>{
+        mostrarDatos(posts);
+        return getCountries();
+    })
+    .then(data => data.json())
+    .then(countries => {
+        mostrarBanderas(countries);
+    })
+
+})
+
+function getPosts(){
+    return     fetch('https://jsonplaceholder.typicode.com/posts')
+}
+
+function getCountries(){
+    return     fetch('https://restcountries.eu/rest/v2/all')
+}
+
+function mostrarBanderas(countries){
+    contBanderas.innerHTML = ''
+    countries.map((country,i) => {
+        let bandera = document.createElement('img')
+        bandera.src = country.flag
+        bandera.width = '20'
+        bandera.height = '20'
+        contBanderas.appendChild(bandera);
     })
 }
