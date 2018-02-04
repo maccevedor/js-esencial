@@ -1,16 +1,37 @@
 "use strict"
 
+class Producto{
+    constructor(numSerie){
+        this.numSerie = numSerie
+        this.tiempoGarantia = 100
+    }
 
-class Pantalla{
+    static get infoTienda(){
+        console.log('productos');
+    }
 
-    constructor(marca,modelo,pulgadas){
+    set garantia(value){
+        this.tiempoGarantia -= value
+    }
+
+    get garantia(){
+        return this.tiempoGarantia
+    }
+}
+
+class Pantalla extends Producto{
+
+    constructor(numSerie,marca,modelo,pulgadas){
+        super(numSerie);
         this.marca = marca;
         this.modelo = modelo
         this.pulgadas = pulgadas
     }
 
     encendido(){
+        this.garantia -1
         console.log(`la pantalla ${this.marca} se enciende`)
+
     }
     volumen(){
         console.log(`volumen `)
@@ -30,7 +51,7 @@ class Pantalla{
 
 }
 //instansias
-const tvSala = new Pantalla('Master','Oasis',50);
-const tvHabitacion = new Pantalla('Origin','Asus',80);
+const tvSala = new Pantalla('111','Master','Oasis',50);
+const tvHabitacion = new Pantalla('222','Origin','Asus',80);
 
 
