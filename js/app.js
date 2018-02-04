@@ -20,6 +20,14 @@ class Pantalla{
         console.log(` ${this.modelo} y  pulgadas ${this.pulgadas }`)
     }
 
+    set peso(value){
+        this.kgs = value.trim();
+    }
+
+    get peso(){
+        return this.kgs
+    }
+
 }
 //instansias
 const tvSala = new Pantalla('Master','Oasis',50);
