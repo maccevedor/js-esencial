@@ -9,7 +9,13 @@ var expresion2 = /abc/;
 
 //console.log(expresion1.test('abced'));
 
-var fecha = /\d\d-\d\d-\d\d\d\d/
-console.log(fecha.test('02-05-1996'))
+//var fecha = /\d\d-\d\d-\d\d\d\d/
+
+//si cumple al menos un valor []
+//var exp = /[\d]/
+
+//negar un patron
+var exp2 = /[^01]/
+console.log(exp2.test('101002'))
 
 
