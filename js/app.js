@@ -26,7 +26,8 @@ var expresion2 = /abc/;
 //var exp = /\d+/;
 //var exp = /\d*/;
 
-//patron opcional
-var exp = /Hola mun?do/;
+//validar una fecha
+var exp = /\d{1,2}-\d{1,2}-\d{4} \d{1,2}:\d{2}/;
 
-console.log(exp.test('Hola mudo'));
+
+console.log(exp.test('27-06-2008 11:45'));
