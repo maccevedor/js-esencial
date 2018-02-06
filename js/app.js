@@ -9,7 +9,7 @@ var expresion2 = /abc/;
 
 //console.log(expresion1.test('abced'));
 
-
-console.log(expresion1.test('1996'))
+var fecha = /\d\d-\d\d-\d\d\d\d/
+console.log(fecha.test('02-05-1996'))
 
 
