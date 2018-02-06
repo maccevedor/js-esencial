@@ -15,7 +15,14 @@ var expresion2 = /abc/;
 //var exp = /[\d]/
 
 //negar un patron
-var exp2 = /[^01]/
-console.log(exp2.test('101002'))
+//var exp2 = /[^01]/
+//console.log(exp2.test('101002'))
 
+// sigbolo + , significa patron se va repetir 1 o mas
+// * significa 1 o mas veces o que no este presente
+//
 
+var exp = /\d+/;
+var exp = /\d*/;
+
+console.log(exp.test(''));
