@@ -22,7 +22,11 @@ var expresion2 = /abc/;
 // * significa 1 o mas veces o que no este presente
 //
 
-var exp = /\d+/;
-var exp = /\d*/;
 
-console.log(exp.test(''));
+//var exp = /\d+/;
+//var exp = /\d*/;
+
+//patron opcional
+var exp = /Hola mun?do/;
+
+console.log(exp.test('Hola mudo'));
