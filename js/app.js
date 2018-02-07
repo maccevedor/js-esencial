@@ -1,16 +1,17 @@
-"use strict"
+$(function (){
 
-var mensaje = 'llegaban por montones ,primero 10 , despues 20 , despues 35 y se duplicaban'
+	//var contactForm = document.getElementById('contactForm')
 
-//no se va mezclar con los nuemors
-var patron = /\b(\d+)\b/g
+	//contactForm.onSubmit = function(e){
+	//	e.preventDefault();
+	//}
 
-
-var match
-
-while(match = patron.exec(mensaje)){
-	console.log('se encontro ', match[1],' en ', match.index)
-
-}
-
+	var isValidEmail = function(){
+		//var email = document.getElemtById('email')
+		var email = 'maccevedor@gmail.com'
+		return /^\w+([\.\+\-]?\w+)*@([\.-]?\w+)*(\.\w{2,7})+$/.test(email)
+    }
+    
+        console.log('valido ' , isValidEmail())
+    });
 
