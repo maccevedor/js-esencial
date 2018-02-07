@@ -30,6 +30,11 @@ var expresion2 = /abc/;
 //{2,} minimo 2 maximo n
 //var exp = /\d{1,2}-\d{1,2}-\d{4} \d{1,2}:\d{2}/;
 //sin importar las mayusculas
-var exp = /Hola mundo/i
+//var exp = /Hola mundo/i
+//agrupado de ext o sub expresiones
+var exp = /Woo+(hoo+)+/i
 
-console.log(exp.test('27-06-2008 11:45'));
+
+//Woohoo!
+
+console.log(exp.test('Woohoo'));
