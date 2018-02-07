@@ -11,7 +11,12 @@ $(function (){
 		var email = 'maccevedor@gmail.com'
 		return /^\w+([\.\+\-]?\w+)*@([\.-]?\w+)*(\.\w{2,7})+$/.test(email)
     }
-    
-        console.log('valido ' , isValidEmail())
+   
+	var isValidTwitter = function (){
+		var twitter = 'maccevedor'
+		return /^@(\w+)$/.test(twitter)
+	}
+
+        console.log('valido ' , isValidTwitter())
     });
 
