@@ -41,10 +41,15 @@ var expresion2 = /abc/;
 //var exp = /\bcat\b/
 
 //opciones con el |
-var exp = /pollo|res|pescado/
+//var exp = /pollo|res|pescado/
+
+//^ todo lo que hay al inicio , $ todo loq ue sucede al final
+//
+var exp = /^Any$/
+
+var expFin = /Javascrip$/
 
 
-
-console.log(exp.test('el cliente pollo '));
+console.log(exp.test('Any '));
 //console.log(exp);
 //console.log('hasta 1994'.match(/\d+/));
