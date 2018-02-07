@@ -27,7 +27,9 @@ var expresion2 = /abc/;
 //var exp = /\d*/;
 
 //validar una fecha
-var exp = /\d{1,2}-\d{1,2}-\d{4} \d{1,2}:\d{2}/;
-
+//{2,} minimo 2 maximo n
+//var exp = /\d{1,2}-\d{1,2}-\d{4} \d{1,2}:\d{2}/;
+//sin importar las mayusculas
+var exp = /Hola mundo/i
 
 console.log(exp.test('27-06-2008 11:45'));
