@@ -37,10 +37,14 @@ var expresion2 = /abc/;
 
 //Woohoo!
 
+//limites de del valor
+//var exp = /\bcat\b/
 
-var exp = /\d+/.exec(' del 1984')
+//opciones con el |
+var exp = /pollo|res|pescado/
 
 
-//console.log(exp.test('Woohoo'));
-console.log(exp);
-console.log('hasta 1994'.match(/\d+/));
+
+console.log(exp.test('el cliente pollo '));
+//console.log(exp);
+//console.log('hasta 1994'.match(/\d+/));
