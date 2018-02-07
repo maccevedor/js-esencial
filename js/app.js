@@ -17,6 +17,7 @@ $(function (){
 		return /^@(\w+)$/.test(twitter)
 	}
 
+
         console.log('valido ' , isValidTwitter())
     });
 
