@@ -1,21 +1,16 @@
-var exp1 = /y/g
+"use strict"
 
-//var concidencia = exp1.exec('subr yfx sibr yfg')
+var mensaje = 'llegaban por montones ,primero 10 , despues 20 , despues 35 y se duplicaban'
 
-
-exp1.lastIndex = 6;
-
-var concidencia = exp1.exec('subr yfx sibr yfg')
+//no se va mezclar con los nuemors
+var patron = /\b(\d+)\b/g
 
 
-console.log(concidencia);
-console.log(concidencia.lastIndex);
+var match
+
+while(match = patron.exec(mensaje)){
+	console.log('se encontro ', match[1],' en ', match.index)
+
+}
 
 
-var exp2 = /\d/g
-
-console.log(exp2.exec(' 4 tacos y agua'));
-console.log(exp2.exec(' 4 tacos y agua'));
-//esto para que empiece de neuvo
-exp2.lasIndex = 0
-console.log(exp2.exec(' 4 tacos y agua'));
