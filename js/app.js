@@ -49,6 +49,13 @@ var exp = /^Any$/
 
 var expFin = /Javascrip$/
 
+var mensaje = 'sushi'
+
+//la primera aparicion
+console.log(mensaje.replace(/sushi/,'tacos'));
+//todas las que encuentre
+console.log(mensaje.replace(/sushi/g,'tacos'));
+
 
 console.log(exp.test('Any '));
 //console.log(exp);
