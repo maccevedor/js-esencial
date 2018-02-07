@@ -32,9 +32,15 @@ var expresion2 = /abc/;
 //sin importar las mayusculas
 //var exp = /Hola mundo/i
 //agrupado de ext o sub expresiones
-var exp = /Woo+(hoo+)+/i
+//var exp = /Woo+(hoo+)+/i
 
 
 //Woohoo!
 
-console.log(exp.test('Woohoo'));
+
+var exp = /\d+/.exec(' del 1984')
+
+
+//console.log(exp.test('Woohoo'));
+console.log(exp);
+console.log('hasta 1994'.match(/\d+/));
