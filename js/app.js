@@ -1,23 +1,20 @@
-$(function (){
+var mensaje = "mensaje local"
+//	estado = "activo",
+	resultado += 2;
 
-	//var contactForm = document.getElementById('contactForm')
-
-	//contactForm.onSubmit = function(e){
-	//	e.preventDefault();
-	//}
-
-	var isValidEmail = function(){
-		//var email = document.getElemtById('email')
-		var email = 'maccevedor@gmail.com'
-		return /^\w+([\.\+\-]?\w+)*@([\.-]?\w+)*(\.\w{2,7})+$/.test(email)
-    }
-   
-	var isValidTwitter = function (){
-		var twitter = 'maccevedor'
-		return /^@(\w+)$/.test(twitter)
-	}
+var datos = {};
+datos.mensaje="mensaje local del objeto"
+datos.resultado = 120
 
 
-        console.log('valido ' , isValidTwitter())
-    });
+function saludar(){
+	console.log(mensaje)
+	console.log(resultado)
+
+	console.log(datos.mensaje)
+	console.log(datos.resultado)
+
+}
+
+saludar()
 
