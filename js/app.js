@@ -1,13 +1,13 @@
-var persona = {},
- estado = true,
-resultado = "";
+var animales = ['perro','gato']
 
+vat totalAnimales = animales.length
 
-console.log(persona);
+try{
 
-
-if(resultado){
-	console.log('p existe')
-}else{
-	console.log('p no existe')
+	for (var i =0; i< totalAnimales;i++){
+	
+	
+	}
+}
+catch(e){
 }
