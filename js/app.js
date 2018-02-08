@@ -1,8 +1,25 @@
-var animales = ['perro','gato']
+$(document).ready(function(){
 
-var totalAnimales = animales.length;
+var tienda = {
+	nombre: 'tienda 4 esquinas',
+	calcular: function(costo1,costos2){
+		return costo1;	
+	},
+	saludar: function(){
+		var mensaje = "hola"
+		return mensaje;
+	}
+};
+
+console.log(tienda.nombre)
+console.log(tienda.calcular(20,30))
+console.log(tienda.saludar())
 
 
-for (var i=0;i<totalAnimales;i++){
-	console.log(animales[i]);
-}
+var btnSaludar = document.getElementById('btnSaludar');
+
+btnSaludar.addEventListener('click',function(){
+	console.log(tienda.saludar());
+
+});
+});
