@@ -1,13 +1,5 @@
-var animales = ['perro','gato']
+var LIMITE = 30
 
-vat totalAnimales = animales.length
+var LIMITE_TOTAL = 30
 
-try{
 
-	for (var i =0; i< totalAnimales;i++){
-	
-	
-	}
-}
-catch(e){
-}
