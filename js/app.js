@@ -1,15 +1,10 @@
-var persona = {
-	nombre: "Persona",
-	email: "mao@gmail.com",
-	twitter: 'asda',
-	saludar: function(){
-		return 'hola'
-	}
-}
+var persona = {}
 
-var dato = ""
+console.log(persona);
 
-for (dato in persona){
-	console.log(dato, persona[dato]);
 
+if(persona){
+	console.log('p existe')
+}else{
+	console.log('p no existe')
 }
