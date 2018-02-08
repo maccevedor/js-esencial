@@ -1,5 +1,10 @@
-var LIMITE = 30
+function suma(a,b){
+	var resultado = a + b
+	return resultado
+}
 
-var LIMITE_TOTAL = 30
+suma(2,3)
 
+var cuentaFinal = suma(suma(2,3),suma(20,45));
+console.log(cuentaFinal);
 
