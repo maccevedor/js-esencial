@@ -1,10 +1,7 @@
-function suma(a,b){
-	var resultado = a + b
-	return resultado
-}
+var animales = ['perro','gato']
 
-suma(2,3)
 
-var cuentaFinal = suma(suma(2,3),suma(20,45));
-console.log(cuentaFinal);
-
+var listaAnimales = animales.join(',')
+var nuevaLista = animales.concat(',')
+console.log(listaAnimales);
+console.log(nuevaLista);
