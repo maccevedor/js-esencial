@@ -1,20 +1,8 @@
-var mensaje = "mensaje local"
-//	estado = "activo",
-	resultado += 2;
+var animales = ['perro','gato']
 
-var datos = {};
-datos.mensaje="mensaje local del objeto"
-datos.resultado = 120
+var totalAnimales = animales.length;
 
 
-function saludar(){
-	console.log(mensaje)
-	console.log(resultado)
-
-	console.log(datos.mensaje)
-	console.log(datos.resultado)
-
+for (var i=0;i<totalAnimales;i++){
+	console.log(animales[i]);
 }
-
-saludar()
-
