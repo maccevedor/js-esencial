@@ -1,0 +1,47 @@
+if &cp | set nocp | endif
+nnoremap <silent>  :nohlsearch=has('diff')?'|diffupdate':''
+let s:cpo_save=&cpo
+set cpo&vim
+map  <Plug>(ctrlp)
+vmap [% [%m'gv``
+vmap ]% ]%m'gv``
+vmap a% [%v]%
+vmap gx <Plug>NetrwBrowseXVis
+nmap gx <Plug>NetrwBrowseX
+vnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()
+nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(expand((exists("g:netrw_gx")? g:netrw_gx : '<cfile>')),netrw#CheckIfRemote())
+nnoremap <silent> <Plug>(ctrlp) :CtrlP
+map <F2> :NERDTreeToggle
+inoremap  u
+let &cpo=s:cpo_save
+unlet s:cpo_save
+set autoindent
+set autoread
+set background=dark
+set backspace=indent,eol,start
+set complete=.,w,b,u,t
+set display=lastline
+set fileencodings=ucs-bom,utf-8,default,latin1
+set formatoptions=tcqj
+set helplang=en
+set history=1000
+set incsearch
+set laststatus=2
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+set nomodeline
+set nrformats=bin,hex
+set printoptions=paper:letter
+set ruler
+set runtimepath=~/.vim,~/.vim/bundle/ctrlp.vim,~/.vim/bundle/nerdtree,~/.vim/bundle/vim-sensible,~/.vim/bundle/vim-wakatime,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim80,/usr/share/vim/vim80/pack/dist/opt/matchit,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
+set scrolloff=1
+set sessionoptions=blank,buffers,curdir,folds,help,tabpages,winsize
+set sidescrolloff=5
+set smarttab
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+set tabpagemax=50
+set tags=./tags;,./TAGS,tags,TAGS
+set ttimeout
+set ttimeoutlen=100
+set viminfo=!,'100,<50,s10,h
+set wildmenu
+" vim: set ft=vim :
