@@ -5,6 +5,7 @@
 	<title></title>
 	<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
 	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+	<script src="https://unpkg.com/prop-types/prop-types.js"></script>
 	<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 	<script src="js/app.js"></script>
 
@@ -16,44 +17,45 @@
 </body>
 <script type="text/babel">
 		//@ts-check
-		//import React from "react";
-		//import ReactDOM from "react-dom";
-		const rootElement = document.getElementById("root");
-		// const element = document.createElement("div");
-		// element.textContent = "hello world";
-		// element.className = "container";
-		// rootElement.appendChild(element);
-
-		// const element = React.createElement(
-		// 	"div",
-		// 	{ className: "container" },
-		// 	"hello world"
-		// )
-		// const element = React.createElement('div',{
-		// 	className: 'container',
-		// 	children: 'hello world'
-		// })
-		const content = 'hello w'
-		const myClassName = 'container'
-		const props = {
-			className: 'container',
-			children: 'hello World'
+		class SayHello extends React.Component{
+			static propTypes ={
+			 	firstName: PropTypes.string.isRequired,
+			 	lastName: PropTypes.string.isRequired,		
+			}
+			render(){
+				const {firstName,lastName} = this.props
+				return(
+					<div>
+						hello {firstName} {lastName}!
+					</div>
+				)
+			}
 		}
-		const helloWorld = <div>hello wo</div>
-		const Message = (props) => <div> {props.msg}</div>
-		const element = (
-			//<div className="my-class" {...props}/>
-			//<div className="my-class" {...props}> Hol</div>
-			<div className="container">
-				{React.createElement(Message,{msg: 'Hello mensage React'})}
-				{Message({msg: 'Hello mensage'})}
-				{helloWorld}	
-				<Message msg=" prueba babel"/>
-			</div>
-		)
-		//const element = <div className={myClassName}>{(() => content)()}</div>
-		ReactDOM.render(element, rootElement);
+		// function SayHello(props){
+		// 	return(
+		// 		<div>
+		// 			hello {props.firsName} {props.lastName}
+		// 		</div>
+		// 	)
+		// }
+		// const PropTypes = {
+		// 	string(props,propName,componentName){
+		// 		if(typeof props[propName] !== 'string'){
+		// 			return new Error(
+		// 				`hey , ${propName} ${componentName} but ${typeof props[propName]}!`
+		// 			)
+		// 		}
+		// 	}
+		// }
 
+		// SayHello.propTypes = {
+		// 	firsName: PropTypes.string,
+		// 	lastName: PropTypes.string,
+		// }
+		ReactDOM.render(
+			<SayHello firstName={true}/>,
+			document.getElementById('root')
+		)
 </script>
 
 </html>
