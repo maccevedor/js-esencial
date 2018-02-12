@@ -39,9 +39,17 @@
 			className: 'container',
 			children: 'hello World'
 		}
+		const helloWorld = <div>hello wo</div>
+		const Message = (props) => <div> {props.msg}</div>
 		const element = (
 			//<div className="my-class" {...props}/>
-			<div className="my-class" {...props}> Hol</div>
+			//<div className="my-class" {...props}> Hol</div>
+			<div className="container">
+				{React.createElement(Message,{msg: 'Hello mensage React'})}
+				{Message({msg: 'Hello mensage'})}
+				{helloWorld}	
+				<Message msg=" prueba babel"/>
+			</div>
 		)
 		//const element = <div className={myClassName}>{(() => content)()}</div>
 		ReactDOM.render(element, rootElement);
