@@ -3,27 +3,49 @@
 
 <head>
 	<title></title>
-	<script
-			  src="http://code.jquery.com/jquery-3.3.1.min.js"
-			  			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-						  			  crossorigin="anonymous"></script>
-	<script src="js/app2.js"></script>	
+	<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+	<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 	<script src="js/app.js"></script>
+
 </head>
 
 <body>
+<div id='root'></div>
 
-	<button id="btnSaludar">Saludar</button>
-	
-.navbar>a.navbar-brand+.navbar-nav>a*
-<div class="navbar">
-	<a href="" class="navbar-brand"></a>
-	<div class="navbar-nav">
-		<a href="">home</a>
-		<a href="">contacts</a>
-		<a href="">about</a>
-	</div>
-</div>
 </body>
+<script type="text/babel">
+		//@ts-check
+		//import React from "react";
+		//import ReactDOM from "react-dom";
+		const rootElement = document.getElementById("root");
+		// const element = document.createElement("div");
+		// element.textContent = "hello world";
+		// element.className = "container";
+		// rootElement.appendChild(element);
+
+		// const element = React.createElement(
+		// 	"div",
+		// 	{ className: "container" },
+		// 	"hello world"
+		// )
+		// const element = React.createElement('div',{
+		// 	className: 'container',
+		// 	children: 'hello world'
+		// })
+		const content = 'hello w'
+		const myClassName = 'container'
+		const props = {
+			className: 'container',
+			children: 'hello World'
+		}
+		const element = (
+			//<div className="my-class" {...props}/>
+			<div className="my-class" {...props}> Hol</div>
+		)
+		//const element = <div className={myClassName}>{(() => content)()}</div>
+		ReactDOM.render(element, rootElement);
+
+</script>
 
 </html>
