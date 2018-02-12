@@ -17,34 +17,25 @@
 </body>
 <script type="text/babel">
 		//@ts-check
-		function Message({message}){
-			// return message
-			// ? React.createElement('div',null,message)
-			// : React.createElement(
-			// 	'div',
-			// 	null,
-			// 	'mo Mesa'
-			// )
-			return(
-				<div>
-					
-					
-					{
-						message ? (
-							<div>{message}</div>
-						) : (
-							<div>No messa </div>
-						)
-					}
-				</div>
-			)
-		}
+	
+	function tick(){
 
-
-		ReactDOM.render(
-			<Message message={'hi'}/>,
-			document.getElementById('root')
+		const time = new Date().toLocaleTimeString()
+		const element = (
+			<div>
+				It is
+				<input value={time} />
+				<input value={time} />
+			</div>
 		)
+
+			ReactDOM.render(
+				element,
+				document.getElementById('root')
+			)
+	}
+	tick()
+	setInterval(tick,1000)
 </script>
 
 </html>
