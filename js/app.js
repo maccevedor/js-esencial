@@ -28,22 +28,24 @@ describe('getAnimals',()=>{
         getAnimals(fakeFetch,123)
     })
     
-    it('parses the reponse of fetch correctly', ()=>{
+    it('parses the reponse of fetch correctly', (done)=>{
         const fakeFetch = urel=>{
             return Promise.resolve({
                 json: () => Promise.resolve({
                     
-                    results:{
+                    results:[{
                         name: 'lion',
                         type: 'dragon'
-                    }
+                    }]
                     
                 })
             }) 
         }
 
         getAnimals(fakeFetch,12345)
-        .then(result => assert(result.name === 'lion'))_
+        .then(result => 
+            assert(result.name === 'lion')
+            done()_
     })
 })
 
