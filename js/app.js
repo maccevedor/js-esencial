@@ -5,6 +5,8 @@ function getAnimals(fetch,id){
     .then(data => data.results[0])
 }
 
+
+
 /*
 getAnimals(windows.fetch,123)
     .then(animal =>
@@ -26,6 +28,23 @@ describe('getAnimals',()=>{
         getAnimals(fakeFetch,123)
     })
     
+    it('parses the reponse of fetch correctly', ()=>{
+        const fakeFetch = urel=>{
+            return Promise.resolve({
+                json: () => Promise.resolve({
+                    
+                    results:{
+                        name: 'lion',
+                        type: 'dragon'
+                    }
+                    
+                })
+            }) 
+        }
+
+        getAnimals(fakeFetch,12345)
+        .then(result => assert(result.name === 'lion'))_
+    })
 })
 
 
