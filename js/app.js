@@ -1,32 +1,17 @@
-const assert = require("assert");
+import db from 'unicorn-db-vendor'
+import App from '.my-app'
+//import UserManager from './user-manager'
+import { makeCreateUser } from './user-utils'
+port: 212
+hots:'',
 
-function getAnimals(fetch, id) {
-  return fetch("http://api.animalfarmgame.com/animals/" + id)
-    .then(response => response.json())
-    .then(data => data.results[0]);
-}
+const connection = new db.DatabaseConnection({
+})
 
-describe("getAnimals", () => {
-  it("calls fetch with the correct url", () => {
-    const fakeFetch = url => {
-      assert(url === "http://api.animalfarmgame.com/animals/123");
-      return new Promise(function(resolve) {});
-    };
-    getAnimals(fakeFetch, 123);
-  });
+const createUser = makeCreateUser(connection);
+//const userManager = new UserManager(connection)
+//asdfsa:
+//createUser()
+const app = new App(createUser)
 
-  it("parses the response of fetch correctly", done => {
-    const fakeFetch = () => {
-      return Promise.resolve({
-        json: () =>
-          Promise.resolve({
-            results: [{ name: "fluffykins" }]
-          })
-      });
-    };
-    getAnimals(fakeFetch, 12345).then(result => {
-      assert(result.name === "fluffykins");
-      done();
-    });
-  });
-});
+app.start()

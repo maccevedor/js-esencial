@@ -1,0 +1,813 @@
+'use strict';
+
+console.log('forest');
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/* jshint expr: true */
+/* jshint unused: false */
+/*
+TODO:
+  1. remover comentario de jshint
+*/
+var fnMainAlert = function () {
+  function fnMainAlert(positionalert, alerttype, msg, time) {
+    _classCallCheck(this, fnMainAlert);
+
+    this.wrrp = jQuery('#alert_main'), this.contentAlert = this.wrrp.find('.content_alert'), this.positionalert = positionalert, this.alerttype = alerttype, this.msg = msg, this.time = time;
+  }
+
+  _createClass(fnMainAlert, [{
+    key: 'closemodal',
+    value: function closemodal() {
+      jQuery(this.wrrp).slideUp();
+    }
+  }, {
+    key: 'controls',
+    value: function controls() {
+
+      var that = this;
+      switch (this.positionalert) {
+        case 'static':
+          jQuery(this.wrrp).addClass('alert_main_static');
+          break;
+        case 'absolute':
+          jQuery(that.wrrp).removeClass('.alert_main_static');
+          break;
+      }
+      switch (this.alerttype) {
+        case 'green':
+          jQuery(this.wrrp).addClass('green_alert');
+          break;
+        case 'blue':
+          jQuery(this.wrrp).addClass('blue_alert');
+          break;
+        case 'yellow':
+          jQuery(this.wrrp).addClass('yellow_alert');
+          break;
+        case 'red':
+          jQuery(this.wrrp).addClass('red_alert');
+          break;
+      }
+      jQuery(this.contentAlert).html(this.msg);
+      jQuery(this.wrrp).slideDown(function () {
+        if (that.time) {
+          setTimeout(function () {
+            jQuery(that.wrrp).slideUp();
+          }, 5000);
+        }
+      });
+    }
+  }]);
+
+  return fnMainAlert;
+}();
+
+/*
+Usage:
+
+HTML:
+
+    <div class="wrapper_alerta alert_gen" id="alert_main">
+      <div class="wrapper_max960">
+          <span class="icoalerta icon-check icoalerta_green"></span>
+          <span class="icoalerta icon-info icoalerta_blue"></span>
+          <span class="icoalerta icon-x icoalerta_red"></span>
+          <span class="icoalerta  icon-alert icoalerta_yellow"></span>
+          <p class="content_alert">
+          </p>
+      </div>
+    </div>
+
+JS:
+
+  // No olvidar instarciarlo
+  const mainAlert = new fnMainAlert();
+
+  mainAlert.positionalert = 'static';
+  mainAlert.alerttype = 'red';
+  mainAlert.msg = 'Aquí va el mensaje de la alerta';
+  mainAlert.time = true;
+  mainAlert.controls();
+
+*/
+
+/* jshint expr: true */
+/* jshint unused: false */
+/*
+/*
+TODO:
+  1.  Limitaciones
+*/
+
+var modsDudas = function () {
+  function modsDudas(wrpp) {
+    _classCallCheck(this, modsDudas);
+
+    this.wrpp = wrpp, this.resThis = false;
+  }
+
+  _createClass(modsDudas, [{
+    key: 'resizeFn',
+    value: function resizeFn() {
+      var thisSelf = this;
+      if (window.innerWidth < 800) {
+        jQuery(thisSelf.wrpp).addClass("wrr_tabres");
+        jQuery(thisSelf.wrpp).find(".mod_opc").removeClass('active');
+        jQuery(thisSelf.wrpp).find(".mod_opc").eq(0).addClass('active');
+        thisSelf.resThis = true;
+      } else {
+        jQuery(thisSelf.wrpp).removeClass("wrr_tabres");
+        jQuery(thisSelf.wrpp).find(".mod_opc").removeClass('active');
+        thisSelf.resThis = false;
+      }
+    }
+  }, {
+    key: 'controls',
+    value: function controls() {
+      var thisSelf = this;
+      var btTab = jQuery(thisSelf.wrpp).find('.opcion2-titulo');
+      var modTab = jQuery(thisSelf.wrpp).find('.mod_opc');
+      thisSelf.resizeFn();
+      jQuery(window).resize(function () {
+        thisSelf.resizeFn();
+      });
+      jQuery(btTab).on('click', function (e) {
+        e.preventDefault();
+        thisSelf.resizeFn();
+        if (thisSelf.resThis) {
+          jQuery(modTab).removeClass('active');
+          jQuery(this).parents('.mod_opc').addClass('active');
+        }
+      });
+    }
+  }]);
+
+  return modsDudas;
+}();
+/*
+Usage:
+
+modules/custom/tigo_paquete/templates/respuesta.html.twig
+
+Images guide:
+desktop view:
+  https://i.imgur.com/hbRHqnJ.jpg
+mobile view:
+  https://i.imgur.com/WcxUo5c.jpg
+
+HTML:
+
+  <div class="wrapper_de_las_dos_columnas">
+    // mod_opc es el conteedor de una columna
+    <div class="mod_opc">
+      // Siempre debe tener un título que va a estar en los tabs
+      <div class="opcion2-titulo">titulo de la columna</div>
+      <div class="conttab">
+      // Contenido del tab
+      </div>
+    </div>
+    // Columna dos
+    <div class="mod_opc">
+      ...
+    </div>
+  </div>
+
+JS:
+
+  // Primero inicializamos elwrapper de las dos columnas
+  var modDudas = new modsDudas($('.wrapper_de_las_dos_columnas'));
+
+  // y llamamos a .controls() para quenicialize la funcionalidad cuando la pantalla cambie de tamaño
+  modDudas.controls();
+
+*/
+
+/* jshint expr: true */
+/* jshint unused: false */
+/* jshint eqeqeq: false */
+/*
+TODO:
+	2. remover comentario de jshint
+*/
+
+var phoneFormat = function () {
+  function phoneFormat(thisPhone) {
+    _classCallCheck(this, phoneFormat);
+
+    this.thisPhone = thisPhone, this.valPhone = false, this.valActual = '';
+  }
+
+  _createClass(phoneFormat, [{
+    key: 'valConditions',
+    value: function valConditions() {
+      var that = this;
+      var valThis = jQuery(this.thisPhone).val();
+      if (valThis.length > 1 && valThis.substr(1, 1) != 3) {
+        jQuery(this.thisPhone).parent('.wrrp_campo').addClass('errorcampo');
+        jQuery(this.thisPhone).parent('.wrrp_campo').find('.alerta_errorcampo').html('El número ingresado es incorrecto');
+      } else {
+        jQuery(this.thisPhone).parent('.wrrp_campo').removeClass('errorcampo');
+      }
+      if (valThis.length == 14 && valThis.substr(1, 1) == 3) {
+        that.valPhone = true;
+      } else {
+        that.valPhone = false;
+      }
+    }
+  }, {
+    key: 'thisKeyUp',
+    value: function thisKeyUp() {
+      var that = this;
+      that.valActual = jQuery(this.thisPhone).val();
+      var nuevoValor = that.formatoInput(that.valActual);
+      jQuery(this.thisPhone).val(nuevoValor);
+      that.valConditions();
+
+      jQuery(this.thisPhone).on('keyup focusout', function () {
+        that.valActual = jQuery(this).val();
+        nuevoValor = that.formatoInput(that.valActual);
+        jQuery(this).val(nuevoValor);
+        that.valConditions();
+      });
+      jQuery(this.thisPhone).bind('input propertychange', function () {
+        that.valConditions();
+      }), jQuery(this.thisPhone).on('blur', function () {
+        that.valConditions();
+        if (that.valPhone) {
+          jQuery(this).parent('.wrrp_campo').removeClass('errorcampo');
+        } else {
+          jQuery(this).parent('.wrrp_campo').addClass('errorcampo');
+          jQuery(this).parent('.wrrp_campo').find('.alerta_errorcampo').html('El número ingresado es incorrecto');
+        }
+      });
+    }
+  }, {
+    key: 'formatoInput',
+    value: function formatoInput(valor) {
+      var nums = [];
+      var simb = "(";
+      var simb2 = ") ";
+      var simb3 = "-";
+      if (valor.length > 14) {
+        valor = valor.substring(0, 14);
+      }
+      valor = valor.toString();
+      valor = valor.replace(/\D/g, ""); //Ésta expresión regular solo permitira ingresar números
+      nums = valor.split(""); //Se vacia el valor en un arreglo
+      var long = nums.length - 1; // Se saca la longitud del arreglo
+      var patron = 3; //Indica cada cuanto se ponen las comas
+      var prox = 2; // Indica en que lugar se debe insertar la siguiente coma
+      var res = "";
+      jQuery(this.thisPhone).attr("data-number", valor);
+      if (long != -1) nums.splice(0, 0, simb);
+      if (long > 2) nums.splice(4, 0, simb2);
+      if (long > 5) nums.splice(8, 0, simb3);
+
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = nums[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var num = _step.value;
+
+          res += num; //Se crea la nueva cadena para devolver el valor formateado
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator.return) {
+            _iterator.return();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+
+      return res;
+    }
+  }]);
+
+  return phoneFormat;
+}();
+
+/*
+Usage:
+
+HTML:
+
+<div class="wrrp_campo">
+	<input id="formato_numeo_cel" type="tel" maxlength="14">
+	<p class="alerta_errorcampo"></p>
+</div>
+JS:
+
+	// Inicializamos seleccionando el input
+	const formatoCel = new phoneFormat(jQuery('#formato_numeo_cel'));
+
+	// A inicializar thisKeyUp retorna el valor con formato de teléfono celular
+	formatoCel.thisKeyUp();
+
+	// Para solo mostrar el formato
+	$('#formato_numeo_cel').html(formatoCel.formatoInput('3142822059', '#formato_numeo_cel'));
+
+	// Para validar si el formato del input está bien o no
+	formatoCel.valPhone ? haz algo : false
+*/
+
+/* jshint expr: true */
+/* jshint unused: false */
+/*
+TODO:
+  1. Añadir ejemplo
+  2. Remover jshint
+*/
+
+
+var createEllipsis = function () {
+  function createEllipsis(wrpp, maxOfChar) {
+    _classCallCheck(this, createEllipsis);
+
+    this.wrpp = wrpp, this.maxOfChar = maxOfChar;
+  }
+
+  _createClass(createEllipsis, [{
+    key: 'resizeFn',
+    value: function resizeFn(contentrin) {
+      var text = "";
+      if (window.innerWidth < 960) {
+        this.wrpp.html(contentrin);
+      } else {
+        if (contentrin.length > this.maxOfChar) {
+          this.wrpp.attr('title', contentrin);
+          text = contentrin.substr(0, this.maxOfChar);
+          this.wrpp.html(text + '...');
+        }
+      }
+    }
+  }, {
+    key: 'controls',
+    value: function controls() {
+      var that = this;
+      var content = this.wrpp.html();
+      var contentrin = content.trim();
+      this.resizeFn(contentrin);
+      jQuery(window).resize(function () {
+        that.resizeFn(contentrin);
+      });
+    }
+  }]);
+
+  return createEllipsis;
+}();
+
+/*
+Usage:
+
+HTML:
+
+  <div class="text-wrapper">
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+      Inventore provident facilis, ipsam eum iusto eius saepe fugiat ipsum,
+      recusandae totam autem, vitae quia. Tempora, eligendi voluptate voluptatibus
+      veniam ipsa qui.
+    </p>
+  </div>
+
+// Inicializar
+var elispsisFormat =  new createEllipsis();
+
+// Recibe dos parámetros el contenedor y el máximo de caracteres
+// Nota: en mobile si aparace todo el contenido
+elispsisFormat(jQuery(".text-wrapper"), 250);
+
+*/
+
+/* jshint expr: true */
+/* jshint unused: false */
+/*
+/*
+TODO:
+	2. Remover jshint
+*/
+
+var activeInput = function () {
+  function activeInput(parent) {
+    _classCallCheck(this, activeInput);
+
+    this.parent = parent, this.thisInput = this.parent.find('input'), this.label = this.parent.find('label'), this.select = this.parent.find('select');
+  }
+
+  _createClass(activeInput, [{
+    key: 'controlInput',
+    value: function controlInput() {
+      var that = this;
+      if (this.thisInput.val().length !== 0) {
+        that.parent.addClass("active");
+      }
+      this.thisInput.on('focus', function () {
+        that.parent.addClass("active");
+        if (that.thisInput.val() === 0) {
+          that.parent.addClass("azul");
+        }
+      });
+      this.thisInput.on('focusout', function () {
+        if (that.thisInput.val().length !== 0) {
+          that.parent.removeClass("azul");
+        }
+        if (that.thisInput.val() === "") {
+          that.parent.removeClass("active");
+        }
+      });
+    }
+  }, {
+    key: 'controSelect',
+    value: function controSelect() {
+      var that = this;
+      function confVal() {
+        if (that.select.val() === "0") {
+          that.parent.removeClass("active");
+        } else {
+          that.parent.addClass("active");
+        }
+      }
+      confVal();
+      this.select.on('change', confVal);
+    }
+  }]);
+
+  return activeInput;
+}();
+
+/*
+Usage:
+
+HTML:
+
+	<div class="wrrp_campo">
+		<input id="numlinsin">
+		<label for="numlinsin">
+			...
+		</label>
+	</div>
+
+JS:
+
+	var newActiveInput = new activeInput($('.wrrp_campo'));
+	newActiveInput.controlInput();
+
+*/
+
+/* jshint expr: true */
+/* jshint unused: false */
+/*
+/*
+TODO:
+  2. Remover jshint
+  3. Cambiar nombre de clase a isMobile
+*/
+
+var siMovil = function () {
+  function siMovil() {
+    _classCallCheck(this, siMovil);
+  }
+
+  _createClass(siMovil, [{
+    key: 'getMobile',
+    value: function getMobile() {
+      return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+      );
+    }
+  }, {
+    key: 'getIphone',
+    value: function getIphone() {
+      return (/iPhone|iPad|iPod/i.test(navigator.userAgent)
+      );
+    }
+  }, {
+    key: 'itsMobile',
+    get: function get() {
+      return this.getMobile();
+    }
+  }, {
+    key: 'itsIphone',
+    get: function get() {
+      return this.getIphone();
+    }
+  }]);
+
+  return siMovil;
+}();
+
+/*
+Usage:
+
+JS:
+
+  var esMobile = new siMovil();
+  // Validar si es mobile
+  if (esMobile.itsMobile) {
+    ...
+  }
+
+// Valida qué tipo de teléfono es
+  switch (esMobile.getIphone) {
+  case 'iPhone':
+      ...
+    break;
+    ...
+    default:
+  }
+
+*/
+
+/* jshint expr: true */
+/* jshint unused: false */
+/* jshint undef: false */
+
+/*
+TODO:
+  1. Agregar ejemplo
+  2. Remover jshint
+*/
+
+var assembleSegment = function () {
+  function assembleSegment() {
+    _classCallCheck(this, assembleSegment);
+
+    this.event = '', this.category = 'Landing Paquetes', this.label, this.value = null, this.currency = 'COL', this.returnProperties = {}, this.numPhone;
+  }
+
+  _createClass(assembleSegment, [{
+    key: 'userId',
+    value: function userId() {
+      var userId = '';
+      if (globalNumPhone === '') {
+        userId = 'anonymousId';
+      } else {
+        userId = globalNumPhone;
+      }
+      return userId;
+    }
+  }, {
+    key: 'returnBuy',
+    value: function returnBuy() {
+      var props = {
+        category: this.category,
+        label: this.label,
+        value: this.value,
+        currency: this.currency
+      };
+      this.returnProperties = props;
+    }
+  }, {
+    key: 'onlyLabel',
+    value: function onlyLabel() {
+      var props = {
+        label: this.label
+      };
+      this.returnProperties = props;
+    }
+  }, {
+    key: 'sendSegment',
+    value: function sendSegment() {
+
+      //const url = Drupal.url("servicios/consumo-segment");
+
+      var arraySend = {
+        userId: this.userId(),
+        event: this.event,
+        properties: this.returnProperties
+      };
+
+      jQuery.ajax({
+        type: 'POST',
+        url: Drupal.url("servicios/consumo-segment"),
+        data: arraySend,
+        success: function success(msg) {}
+      });
+
+      //console.log(arraySend);
+    }
+  }]);
+
+  return assembleSegment;
+}();
+/*
+Usage:
+
+JS:
+  // Inicializar segment
+  var segmentSend = new assembleSegment();
+
+  segmentSend.userId = '';
+  segmentSend.event = '';
+  segmentSend.returnProperties = {};
+
+  // Envía a segment las propiedades queestén en el constructor
+  segmentSend.sendSegment();
+
+*/
+
+/* jshint unused: false */
+
+/*
+TODO:
+  1. Agregar ejemplo
+  2. Remover jshint
+*/
+
+var getLocation = function () {
+  function getLocation() {
+    _classCallCheck(this, getLocation);
+  }
+
+  _createClass(getLocation, [{
+    key: 'showPosition',
+    value: function showPosition(pos) {
+      this.ubication = pos;
+      this.latitude = pos.coords.latitude;
+      this.longitude = pos.coords.longitude;
+    }
+  }, {
+    key: 'getLocation',
+    value: function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(this.showPosition.bind(this));
+      }
+    }
+  }]);
+
+  return getLocation;
+}();
+/*
+Usage:
+https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_geolocation
+
+const getPositionUser = new getLocation()
+getPositionUser.getLocation()
+
+*/
+
+/* jshint expr: true */
+/* jshint unused: false */
+/*
+TODO:
+  2. Remover jshint
+*/
+
+var formatMailForm = function () {
+  function formatMailForm(thisEmail) {
+    _classCallCheck(this, formatMailForm);
+
+    this.thisEmail = thisEmail, this.valEmail = false, this.valActual = "";
+  }
+  // se VALIDA el formato de correo
+
+
+  _createClass(formatMailForm, [{
+    key: 'valConditions',
+    value: function valConditions() {
+      var that = this;
+      that.valActual = jQuery(this.thisEmail).val();
+      var expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      if (that.valActual !== undefined) {
+        if (expr.test(that.valActual)) {
+          that.valEmail = true;
+        } else {
+          that.valEmail = false;
+        }
+      } else {
+        that.valEmail = undefined;
+      }
+    }
+    // Evento focusout aplicado al campo para efectuar validacion
+
+  }, {
+    key: 'onfocus',
+    value: function onfocus() {
+      var that = this;
+      jQuery(this.thisEmail).focusout(function () {
+        that.valActual = jQuery(this).val();
+        if (that.valActual !== "") {
+          that.valConditions();
+          if (that.valEmail) {
+            jQuery(that.thisEmail).parent('.wrrp_campo').removeClass('errorcampo');
+          } else {
+            jQuery(that.thisEmail).parent('.wrrp_campo').addClass('errorcampo');
+            jQuery(that.thisEmail).parent('.wrrp_campo').find('.alerta_errorcampo').html('El correo electrónico no es correcto. Verifícalo e intenta de nuevo');
+          }
+        } else {
+          jQuery(that.thisEmail).parent('.wrrp_campo').removeClass('errorcampo');
+        }
+      });
+    }
+  }]);
+
+  return formatMailForm;
+}();
+
+/*
+Usage:
+
+HTML:
+
+  <div class="wrrp_campo with_icon" data-type="text">
+    <label for="edit-email">
+      Correo electrónico
+      </label>
+    <input  type="email" id="edit-email" class="form-email required" >
+    <p class="alerta_errorcampo"></p>
+  </div>
+
+JS:
+
+  const mailFormat = new formatMailForm(jQuery("#edit-email"));
+  mailFormat.onfocus();
+
+*/
+
+/* jshint expr: true */
+/* jshint unused: false */
+/*
+TODO:
+  1. Agregar ejemplo
+  2. Remover jshint
+*/
+
+var isNumberKey = function () {
+  function isNumberKey() {
+    _classCallCheck(this, isNumberKey);
+  }
+
+  _createClass(isNumberKey, [{
+    key: 'onlyNumbers',
+    value: function onlyNumbers(valor, thisInput) {
+
+      var nums = [];
+      valor = valor.toString();
+      valor = valor.replace(/\D/g, ""); //Ésta expresión regular solo permitira ingresar números
+      nums = valor.split(""); //Se vacia el valor en un arreglo
+      var res = "";
+
+      var _iteratorNormalCompletion2 = true;
+      var _didIteratorError2 = false;
+      var _iteratorError2 = undefined;
+
+      try {
+        for (var _iterator2 = nums[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+          var num = _step2.value;
+
+          res += num; //Se crea la nueva cadena para devolver el valor formateado
+        }
+      } catch (err) {
+        _didIteratorError2 = true;
+        _iteratorError2 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion2 && _iterator2.return) {
+            _iterator2.return();
+          }
+        } finally {
+          if (_didIteratorError2) {
+            throw _iteratorError2;
+          }
+        }
+      }
+
+      if (res.length > 0) {
+        jQuery(thisInput).val(res);
+      } else {
+        jQuery(thisInput).val('');
+      }
+    }
+  }]);
+
+  return isNumberKey;
+}();
+/*
+Usage:
+
+HTML:
+
+  <input id="input_a_validar" type="tel" maxlength="4">
+
+JS:
+
+  // Inicializa la clase
+  var solonumeros = new isNumberKey();
+
+  jQuery("#input_a_validar").keyup(function (e) {
+    // Enviar el valor como primer parámetro y el input como segundo parámetro
+    solonumeros.onlyNumbers(jQuery(this).val(), jQuery(this));
+  });
+
+*/
